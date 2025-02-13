@@ -9,7 +9,7 @@ body {
     position: relative;
 }
 
-/* Popup Styling (Should be Above Everything) */
+/* Popup Styling */
 .popup {
     position: fixed;
     width: 100%;
@@ -18,7 +18,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000; /* Highest priority */
+    z-index: 1000;
 }
 
 .popup-content {
@@ -43,8 +43,7 @@ button:hover {
     background: darkred;
 }
 
-/* Central Note (Should be above roses but below popup) */
-/* Enhanced Note Design */
+/* Central Note - Enhanced Design */
 .note {
     background: linear-gradient(135deg, #ffffff, #ffe6e6);
     padding: 25px;
@@ -70,7 +69,7 @@ button:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Note Paragraphs */
+/* Note Text */
 .note p {
     margin: 10px 0;
     color: #444;
@@ -78,7 +77,7 @@ button:hover {
     letter-spacing: 0.5px;
 }
 
-/* Pop-In Animation */
+/* Animation */
 @keyframes popIn {
     0% {
         transform: translate(-50%, -50%) scale(0.8);
@@ -90,75 +89,111 @@ button:hover {
     }
 }
 
-
-/* Rose Garden (Background container for roses) */
+/* Rose Garden */
 .garden {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1; /* Behind roses and note */
+    z-index: 1;
 }
 
 /* Rose Styling */
 .rose {
     position: absolute;
-    font-size: 24px; /* Keeps emoji and text readable */
+    font-size: 24px;
     cursor: pointer;
     transition: transform 0.2s;
-    z-index: 20; /* Above the garden but below note */
+    z-index: 11;
 }
 
 .rose:hover {
     transform: scale(1.2);
 }
 
-/* Message (Tooltip) */
+/* Rose Hover Tooltip */
 .rose::after {
     content: attr(data-message);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 120%;
+    bottom: 140%;
     background: rgba(0, 0, 0, 0.9);
     color: white;
     padding: 8px 12px;
     border-radius: 8px;
     white-space: normal;
-    width: 200px; /* Keeps it neat */
+    width: 220px;
     text-align: center;
     opacity: 0;
-    transition: opacity 0.3s, transform 0.2s ease-in-out;
+    transition: opacity 0.3s;
     font-size: 14px;
-    z-index: 999; /* Super high priority */
-    pointer-events: none; /* Avoids interfering with clicks */
+    z-index: 999;
+    pointer-events: none;
 }
 
-/* Show tooltip on hover */
 .rose:hover::after {
     opacity: 1;
-    transform: translateX(-50%) translateY(-5px); /* Slight lift */
 }
-/* Footer */
-/* Enhanced Footer */
+
+/* Footer - Enhanced */
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.4); /* Glassmorphism effect */
-    backdrop-filter: blur(10px);
-    border-top: 2px solid rgba(255, 255, 255, 0.3);
-    font-weight: bold;
+    background-color: #ff9999;
+    color: white;
     font-size: 16px;
-    color: #333;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     z-index: 0;
-    transition: background 0.3s;
 }
 
-footer:hover {
-    background: rgba(255, 255, 255, 0.6);
+/* 🎯 Mobile Responsiveness */
+@media (max-width: 768px) {
+    .note {
+        max-width: 90%;
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    .rose {
+        font-size: 20px;
+    }
+
+    .rose::after {
+        width: 180px;
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .note {
+        max-width: 95%;
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .rose {
+        font-size: 18px;
+    }
+
+    .rose::after {
+        width: 160px;
+        font-size: 10px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 8px;
+    }
 }
