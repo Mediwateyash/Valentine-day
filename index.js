@@ -31,3 +31,10 @@
         <div class="rose" data-message="You make my heart bloom!" style="top: 30%; left: 30%;">🌹</div>
         <div class="rose" data-message="You are my sunshine!" style="top: 30%; right: 30%;">🌹</div>
     </div>
+    <script>
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
