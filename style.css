@@ -71,3 +71,44 @@ button:hover {
     top: 0;
     left: 0;
 }
+
+/* Rose Styling with Bloom Effect */
+.rose {
+    font-size: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: absolute;
+    z-index: 1;
+}
+
+.rose:hover {
+    transform: scale(1.5);
+    color: #ff69b4;
+}
+
+.rose::after {
+    content: attr(data-message);
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Message appears above the rose */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #e91e63;
+    white-space: nowrap;
+}
+
+.rose:hover::after {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
