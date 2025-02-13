@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rose Garden for You</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Popup Message -->
     <div class="popup" id="popup">
         <div class="popup-content">
-            <p>Hello, my dear crush! 🌹 Welcome to this enchanted rose garden, made just for you. </p>
-            <P> Each rose holds a special message from my heart—hover over them and let the magic unfold! 💖</p>
+            <p>Hello, my dear crush! 🌹 Welcome to this enchanted rose garden, made just for you.</p>
+            <p>Each rose holds a special message from my heart—hover over them and let the magic unfold! 💖</p>
             <button onclick="closePopup()">Enter Garden</button>
+            <button onclick="playMusic()">Play Music 🎶</button>
         </div>
     </div>
 
@@ -34,14 +35,21 @@
         <div class="rose" data-message="You are my sunshine!" style="top: 30%; right: 30%;">🌹</div>
     </div>
 
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="music.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
     <script>
         function closePopup() {
             document.getElementById("popup").style.display = "none";
         }
+
+        function playMusic() {
+            var music = document.getElementById("backgroundMusic");
+            music.play();
+        }
     </script>
-    <footer> 
-        Designed & Develpoed by <a href="https://linkedin.com/diwateyash2004" target="_blank" rel="noopener noreferrer">Diwate Yash</a>
-        <p>&copy; Notes Cloud By DY </p>
-    </footer>
 </body>
 </html>
