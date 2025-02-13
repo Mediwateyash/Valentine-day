@@ -15,3 +15,8 @@
             <button onclick="closePopup()">Enter Garden</button>
         </div>
     </div>
+    <!-- Central Note -->
+    <div class="note">
+        <p>Hello [Her Name],</p>
+        <p>I want to let you know that you are amazing. You are like a flower—beautiful, unique, and full of life. Your presence brightens my day, and I feel so lucky to know you. Happy Rose Day!</p>
+    </div>
